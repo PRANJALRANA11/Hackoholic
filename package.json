@@ -1,0 +1,103 @@
+{
+
+  "name": "healix",
+
+  "version": "0.1.0",
+
+  "private": true,
+
+  "dependencies": {
+
+    "apexcharts": "^3.45.1",
+
+    "axios": "^1.6.7",
+
+    "framer-motion": "^10.17.9",
+
+    "openai": "^4.25.0",
+
+    "react": "^18.2.0",
+
+    "react-apexcharts": "^1.4.1",
+
+    "react-dom": "^18.2.0",
+
+    "react-router-dom": "^6.21.1",
+
+    "react-scripts": "5.0.1",
+
+    "react-slick": "^0.29.0",
+
+    "react-speech-recognition": "^3.10.0",
+
+    "react-timer-hook": "^3.0.7",
+
+    "react-type-animation": "^3.2.0",
+
+    "slick-carousel": "^1.8.1",
+
+    "tailwind-scrollbar": "^3.0.5",
+
+    "typewriter-effect": "^2.21.0"
+
+
+  },
+
+  "scripts": {
+
+    "start": "react-scripts start",
+
+    "build": "react-scripts build",
+
+    "test": "react-scripts test",
+
+    "eject": "react-scripts eject"
+
+  },
+
+  "eslintConfig": {
+
+    "extends": [
+
+      "react-app",
+
+      "react-app/jest"
+
+    ]
+
+  },
+
+  "browserslist": {
+
+    "production": [
+
+      ">0.2%",
+
+      "not dead",
+
+      "not op_mini all"
+
+    ],
+
+    "development": [
+
+      "last 1 chrome version",
+
+      "last 1 firefox version",
+
+      "last 1 safari version"
+
+    ]
+
+  },
+
+  "devDependencies": {
+
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+
+    "tailwindcss": "^3.4.1"
+
+  }
+
+}
+

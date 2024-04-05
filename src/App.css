@@ -1,0 +1,224 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.square{
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square .listen_animation1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate1 6s linear infinite;
+}
+.square .talk_animation1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate4 2s ease-in-out infinite;
+}
+
+.square .listen_animation2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate2 4s linear infinite;
+}
+.square .talk_animation2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate5 1s ease-in-out infinite;
+}
+
+.square .listen_animation3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate3 8s linear infinite;
+}
+.square .talk_animation3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: animate6 2s ease-in-out infinite;
+}
+
+
+
+@keyframes animate1 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+@keyframes animate3 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+@keyframes animate4 {
+  0% {
+    transform: scale(1); /* Initial scale */
+    opacity: 0.7; /* Initial opacity */
+  }
+  50% {
+    transform: scale(1.2); /* Scale up */
+    opacity: 1; /* Increase opacity */
+  }
+  100% {
+    transform: scale(1); /* Return to the initial scale */
+    opacity: 0.7; /* Return to the initial opacity */
+  }
+}
+@keyframes animate5 {
+  0% {
+    transform: scale(1); /* Initial scale */
+    opacity: 0.7; /* Initial opacity */
+  }
+  50% {
+    transform: scale(1.2); /* Scale up */
+    opacity: 1; /* Increase opacity */
+  }
+  100% {
+    transform: scale(1); /* Return to the initial scale */
+    opacity: 0.7; /* Return to the initial opacity */
+  }
+}
+@keyframes animate6 {
+  0% {
+    transform: scale(1); /* Initial scale */
+    opacity: 0.7; /* Initial opacity */
+  }
+  50% {
+    transform: scale(1.2); /* Scale up */
+    opacity: 1; /* Increase opacity */
+  }
+  100% {
+    transform: scale(1); /* Return to the initial scale */
+    opacity: 0.7; /* Return to the initial opacity */
+  }
+
+}
+
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+
+ 
+
+#video-wrapper {
+  /* background: url(bg.png); */
+  height: 450px;
+  background-position: top;
+}
+
+#video-wrapper div {
+  width: 323px;
+  margin: 125px;
+  padding: 50px 0 0 0;
+}
+
+video {
+  display: block;
+  /* border:1px solid; */
+  border-radius: 50%;
+  /* background-color: #000; */
+}
+.vid_1{
+  transition: opacity 0.5s ease-in-out 0s;
+}
+.vid_2{
+  transition: opacity 0.5s ease-in-out 0s;
+}
