@@ -8,11 +8,17 @@
 
   "dependencies": {
 
+    "@chengsokdara/use-whisper": "^0.2.0",
+
+    "@ffmpeg/core": "^0.12.6",
+
     "apexcharts": "^3.45.1",
 
     "axios": "^1.6.7",
 
     "clsx": "^2.1.0",
+
+    "ffmpeg": "^0.0.4",
 
     "framer-motion": "^10.18.0",
 
