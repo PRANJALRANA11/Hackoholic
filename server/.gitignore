@@ -1,0 +1,28 @@
+venv
+.env
+
+# Ide Releated
+.vscode
+
+*.mp3
+
+# server catch
+
+__pycache__
+
+*.wav
+
+*.txt
+
+*.zip
+
+*.csv
+
+application_default_credentials.json
+client_secret.json
+
+*.log
+
+*.rules
+
+cloud
