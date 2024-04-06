@@ -45,7 +45,7 @@ function Hero() {
 
   return (
     <>
-      <section className="w-full h-[calc(100vh-74px)] bg-gray-950 flex items-center justify-center flex-col space-y-4">
+      <section className="w-full h-[calc(100vh-75px)] bg-gray-950 flex items-center justify-center flex-col space-y-4">
         <svg viewBox="0 0 320 320" className="w-[400px] h-[400px]">
           <defs>
             <circle id="circle-clip" cx="50%" cy="50%" r="25%" />

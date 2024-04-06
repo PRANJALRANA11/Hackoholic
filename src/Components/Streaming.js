@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import SpeechRecognition from "react-speech-recognition";
 import Chat from "./Chat";
 import axios from "axios";
+import OpenAI from "openai";
+
+
+
+
+
 
 export default function Streaming_qa({ msg }) {
   const [message, setMessage] = useState(msg);
@@ -13,6 +19,25 @@ export default function Streaming_qa({ msg }) {
   const [session_count, set_session_count] = useState(0);
   const [server_res, setServerRes] = useState("");
   const [backendSession, setbackendSession] = useState("");
+
+  let client = OpenAI()
+
+  let response = client.audio.speech.create({
+    model:"tts-1",
+    voice="alloy",
+    input="Hello world! This is a streaming test.",
+})
+
+  useEffect(()=>{
+    const startTherapy = async () => {
+    const token = localStorage.getItem("token");
+    const response = await axios.get(
+      `https://text-to-speech-uajn.onrender.com/v1/cup/thearpy/${token}`,
+    );
+    setbackendSession(response.data.session_id);
+  };
+  startTherapy();
+  },[])
 
   const navigate = useNavigate();
   // const user_session_count = "pranjal" + session_count;
@@ -475,26 +500,26 @@ export default function Streaming_qa({ msg }) {
           id="search"
           value={message}
           onChange={handleChange}
-          class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+          class="block w-full p-4 ps-10 text-sm text-gray-950 border border-gray-300 rounded-md bg-white focus:ring-blue-500 focus:border-blue-500 "
           placeholder="Hy what's on your mind"
           required
         />
-        <section className="fixed right-[42px] flex gap-4">
+        <section className="absolute right-[15px] top-[2px] flex gap-4">
           {microphone_state ? (
             <i
-              class="fa-solid mt-5    fa-microphone-slash"
+              class="fa-solid mt-5 fa-microphone-slash"
               onClick={microphone}
             >
               {" "}
             </i>
           ) : (
-            <i class="fa-solid fa-microphone    mt-5" onClick={microphone}></i>
+            <i class="fa-solid fa-microphone mt-5" onClick={microphone}></i>
           )}
           <button
             type="submit"
             id="talk-button"
             onClick={talkButton}
-            class=" text-white mt-2 ml-2  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4  py-2 "
+            class=" text-white mt-2 ml-2  bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4  py-2 "
           >
             Send
           </button>

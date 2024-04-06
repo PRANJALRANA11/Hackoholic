@@ -39,7 +39,7 @@ export default function Main() {
   return (
     <>
       <Navbar />
-      <section className="bg-gray-950 h-[calc(100vh-74px)] p-4 ">
+      <section className="bg-gray-950 h-[calc(100vh-75px)] p-4 ">
         <section className="w-full bg-gray-900 rounded-[12px] h-full container mx-auto p-4 relative flex flex-col gap-4 justify-between" >
           {stream ? (
           <button
@@ -82,11 +82,11 @@ function Navbar() {
               </a>
             </div>
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard")}
               className="border bprder-gray-700 w-fit px-8 py-2 rounded-full text-white"
               type="button"
             >
-              Connect
+              Dashboard
             </button>
           </div>
         </div>
