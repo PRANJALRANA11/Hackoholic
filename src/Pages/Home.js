@@ -1,35 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import Services from "../Components/Services";
-import { useWhisper } from '@chengsokdara/use-whisper'
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const {
-    recording,
-    speaking,
-    transcribing,
-    transcript,
-    pauseRecording,
-    startRecording,
-    stopRecording,
-  } = useWhisper({
-    apiKey: process.env.OPENAI_API_KEY, // YOUR_OPEN_AI_TOKEN
-  })
    return (
     <>
       <Navbar />
-      <div>
-      <p>Recording: {recording}</p>
-      <p>Speaking: {speaking}</p>
-      <p>Transcribing: {transcribing}</p>
-      <p>Transcribed Text: {transcript.text}</p>
-      <button onClick={() => startRecording()}>Start</button>
-      <button onClick={() => pauseRecording()}>Pause</button>
-      <button onClick={() => stopRecording()}>Stop</button>
-    </div>
-
       <Hero />
     </>
   );
