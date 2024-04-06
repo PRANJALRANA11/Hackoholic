@@ -3,11 +3,38 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Services from "../Components/Services";
 import { useNavigate } from "react-router-dom";
+// import { useWhisper } from "@chengsokdara/use-whisper/dist/useWhisper";
 
 export default function Home() {
-   return (
+  // const {
+  //   recording,
+  //   speaking,
+  //   transcribing,
+  //   transcript,
+  //   pauseRecording,
+  //   startRecording,
+  //   stopRecording,
+  // } = useWhisper({
+  //   apiKey: process.env.OPENAI_API_TOKEN, // YOUR_OPEN_AI_TOKEN
+  //   whisperConfig: {
+  //     language: "en",
+  //   },
+  //   nonStop: true, // keep recording as long as the user is speaking
+  //   stopTimeout: 5000, // auto stop after 5 seconds
+  // });
+
+  return (
     <>
       <Navbar />
+      {/* <div>
+        <p>Recording: {recording}</p>
+        <p>Speaking: {speaking}</p>
+        <p>Transcribing: {transcribing}</p>
+        <p>Transcribed Text: {transcript.text}</p>
+        <button onClick={() => startRecording()}>Start</button>
+        <button onClick={() => pauseRecording()}>Pause</button>
+        <button onClick={() => stopRecording()}>Stop</button>
+      </div> */}
       <Hero />
     </>
   );
@@ -27,7 +54,7 @@ function Navbar() {
               </a>
             </div>
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/register")}
               className="border bprder-gray-700 w-fit px-8 py-2 rounded-full text-white"
               type="button"
             >
