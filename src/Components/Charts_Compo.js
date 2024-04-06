@@ -3,7 +3,6 @@ import axios from "axios";
 import Active from "./Active";
 import Emotion from "./Emotion";
 import Engagement from "./Engagement";
-import Excercises from "./Excercises";
 
 
 export default function Charts_Compo() {

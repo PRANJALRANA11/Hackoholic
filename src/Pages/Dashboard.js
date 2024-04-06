@@ -1,5 +1,6 @@
 import React from 'react'
 import ChartsCompo from '../Components/Charts_Compo'
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -14,6 +15,8 @@ export default function Dashboard() {
 }
 
 function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <>
       <nav className="sticky top-0 bg-gray-950 border-b border-slate-800 z-50">
@@ -24,7 +27,13 @@ function Navbar() {
                 Healix
               </a>
             </div>
-            
+            <button
+              onClick={() => navigate("/main")}
+              className="border bprder-gray-700 w-fit px-8 py-2 rounded-full text-white"
+              type="button"
+            >
+              Chat Us
+            </button>
           </div>
         </div>
       </nav>

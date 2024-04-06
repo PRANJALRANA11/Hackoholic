@@ -18,7 +18,6 @@ export default function Main() {
     }
   };
 
-  
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
 
@@ -40,29 +39,30 @@ export default function Main() {
     <>
       <Navbar />
       <section className="bg-gray-950 h-[calc(100vh-75px)] p-4 ">
-        <section className="w-full bg-gray-900 rounded-[12px] h-full container mx-auto p-4 relative flex flex-col gap-4 justify-between" >
-          {stream ? (
-          <button
-            type="button"
-            onClick={handleStream}
-            class="button-34"
-            
-          >
-            Lime
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={handleStream}
-            class="button-34"
-          >
-            Sky
-          </button>
-        )}
-            {stream ? <Streamingqa msg={msg} /> : <Streaming msg={msg} />}
-        
+        <section className="w-full bg-gray-900 rounded-[12px] h-full container mx-auto p-4 relative flex flex-col gap-4 justify-between">
+          <section className="grid grid-cols-2 gap-4">
+            <button type="button" onClick={handleStream} className="button-34 flex justify-center items-center gap-2 ">
+
+              Lime
+              {!stream && (
+
+                <div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 ">
+</div>
+  )}
+
+            </button>
+            <button type="button" onClick={handleStream} class="button-34 flex justify-center items-center gap-2">
+              Sky
+              {stream && (
+
+<div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 ">
+</div>
+)}
+            </button>
+          </section>
+
+          {stream ? <Streamingqa msg={msg} /> : <Streaming msg={msg} />}
         </section>
-          
       </section>
     </>
   );

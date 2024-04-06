@@ -1,7 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import Services from "../Components/Services";
 import { useNavigate } from "react-router-dom";
 // import { useWhisper } from "@chengsokdara/use-whisper/dist/useWhisper";
 
@@ -165,7 +162,7 @@ function Hero() {
 
         <div className="flex space-x-4">
           <button
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/register")}
             className="border border-gray-700 w-fit px-8 py-2 rounded-full text-white"
             type="button"
           >
