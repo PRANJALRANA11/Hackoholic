@@ -1,17 +1,14 @@
-import React from 'react'
-import ChartsCompo from '../Components/Charts_Compo'
+import React from "react";
+import ChartsCompo from "../Components/Charts_Compo";
 import { useNavigate } from "react-router-dom";
-
-
-
 
 export default function Dashboard() {
   return (
     <div>
-      <Navbar/>
-      <ChartsCompo/>
+      <Navbar />
+      <ChartsCompo />
     </div>
-  )
+  );
 }
 
 function Navbar() {
@@ -28,7 +25,7 @@ function Navbar() {
               </a>
             </div>
             <button
-              onClick={() => navigate("/main")}
+              onClick={() => navigate("/register")}
               className="border bprder-gray-700 w-fit px-8 py-2 rounded-full text-white"
               type="button"
             >
