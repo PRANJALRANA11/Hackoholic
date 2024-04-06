@@ -24,7 +24,7 @@ export default function Login() {
     );
     console.log(res);
     if (res.status === 201) {
-      navigate("/main");
+      navigate("/chat");
     } else {
       alert("Registration failed");
     }
@@ -60,10 +60,15 @@ export default function Login() {
                     required=""
                   />
                 </div>
-                
-<button type="submit"
-                  onClick={register} class="button-34" role="button">Register</button>
 
+                <button
+                  type="submit"
+                  onClick={register}
+                  class="button-34"
+                  role="button"
+                >
+                  Register
+                </button>
               </form>
             </div>
           </div>

@@ -41,23 +41,29 @@ export default function Main() {
       <section className="bg-gray-950 h-[calc(100vh-75px)] p-4 ">
         <section className="w-full bg-gray-900 rounded-[12px] h-full container mx-auto p-4 relative flex flex-col gap-4 justify-between">
           <section className="grid grid-cols-2 gap-4">
-            <button type="button" onClick={handleStream} className="button-34 flex justify-center items-center gap-2 ">
-
+            <button
+              type="button"
+              onClick={handleStream}
+              className="button-34 flex justify-center items-center gap-2 "
+            >
               Lime
-              {!stream && (
-
-                <div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 ">
-</div>
-  )}
-
+              {stream ? (
+                <div className=" bg-[#1f2937] rounded-full h-[6px] w-[6px] mb-2 "></div>
+              ) : (
+                <div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 "></div>
+              )}
             </button>
-            <button type="button" onClick={handleStream} class="button-34 flex justify-center items-center gap-2">
+            <button
+              type="button"
+              onClick={handleStream}
+              class="button-34 flex justify-center items-center gap-2"
+            >
               Sky
-              {stream && (
-
-<div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 ">
-</div>
-)}
+              {stream ? (
+                <div className=" bg-green-400 rounded-full h-[6px] w-[6px] mb-2 "></div>
+              ) : (
+                <div className=" bg-[#1f2937] rounded-full h-[6px] w-[6px] mb-2 "></div>
+              )}
             </button>
           </section>
 
