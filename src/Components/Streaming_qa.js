@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom";
 import SpeechRecognition from "react-speech-recognition";
 import axios from "axios";
 import Chat from "./Chat";
+import { useSpeechSynthesis } from "react-speech-kit";
+
 
 export default function Streaming_qa({ msg }) {
   const [message, setMessage] = useState(msg);
-  const [session_state, set_session_state] = useState(false);
-  const [sid, setSid] = useState("");
-  const [ses, set_ses] = useState("");
   const [microphone_state, set_microphone_state] = useState(false);
-  const [session_count, set_session_count] = useState(0);
   const [server_res, setServerRes] = useState("");
   const [backendSession, setbackendSession] = useState("");
+  const [chatsHistory, setChatsHistory] = useState([]);
+const { speak } = useSpeechSynthesis();
 
   const navigate = useNavigate();
   // const user_session_count = "pranjal" + session_count;
@@ -65,12 +65,15 @@ export default function Streaming_qa({ msg }) {
     );
     console.log(response.data);
     setServerRes(response.data.message);
+    setChatsHistory([...chatsHistory, { question: message, ans: response.data.message }]);
+    speak({ text: response.data.message })
+
     setMessage("");
   }
 
   return (
     <>
-      <Chat messageFromServer={server_res} transcript={message} />
+      <Chat chatsHistory={chatsHistory} />
       <div class="flex relative">
         <input
           type="search"

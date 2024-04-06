@@ -3,17 +3,19 @@ import { useNavigate } from "react-router-dom";
 import SpeechRecognition from "react-speech-recognition";
 import Chat from "./Chat";
 import axios from "axios";
-import OpenAI from "openai";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function Streaming_qa({ msg }) {
   const [message, setMessage] = useState(msg);
-  const [session_state, set_session_state] = useState(false);
-  const [sid, setSid] = useState("");
-  const [ses, set_ses] = useState("");
   const [microphone_state, set_microphone_state] = useState(false);
-  const [session_count, set_session_count] = useState(0);
   const [server_res, setServerRes] = useState("");
   const [backendSession, setbackendSession] = useState("");
+  const [chatsHistory, setChatsHistory] = useState([]);
+
+const { speak } = useSpeechSynthesis();
+
+  
+
 
   console.log(process.env.OPENAI_API_KEY);
 
@@ -54,6 +56,10 @@ export default function Streaming_qa({ msg }) {
     console.log(message);
   };
 
+
+
+  
+
   // OpenAI API endpoint set up new 10/23
   async function fetchOpenAIResponse(userMessage) {
     const token = localStorage.getItem("token");
@@ -68,12 +74,14 @@ export default function Streaming_qa({ msg }) {
     );
     console.log(response.data);
     setServerRes(response.data.message);
+    setChatsHistory([...chatsHistory, { question: message, ans: response.data.message }]);
+    speak({ text: response.data.message })
     setMessage("");
   }
 
   return (
     <>
-      <Chat messageFromServer={server_res} transcript={message} />
+      <Chat chatsHistory={chatsHistory} />
       <div class="flex relative">
         <input
           type="search"
