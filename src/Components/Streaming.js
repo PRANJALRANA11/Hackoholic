@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import SpeechRecognition from "react-speech-recognition";
 import Chat from "./Chat";
 import axios from "axios";
-import OpenAI from "openai";
 
 export default function Streaming_qa({ msg }) {
   const [message, setMessage] = useState(msg);
@@ -14,8 +13,6 @@ export default function Streaming_qa({ msg }) {
   const [session_count, set_session_count] = useState(0);
   const [server_res, setServerRes] = useState("");
   const [backendSession, setbackendSession] = useState("");
-
-  console.log(process.env.OPENAI_API_KEY);
 
   useEffect(() => {
     const startTherapy = async () => {
